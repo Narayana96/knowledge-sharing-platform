@@ -1,0 +1,156 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 252 56% 66%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 252 56% 70%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222.2 84% 4.9%;
+    --sidebar-primary: 252 56% 66%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 210 40% 96.1%;
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 252 56% 70%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 252 56% 66%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 252 56% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-skillbridge-blue hover:bg-skillbridge-darkBlue text-white py-2.5 px-6 rounded-lg font-medium transition-all duration-300 ease-in-out transform hover:scale-[1.02] hover:shadow-md active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply bg-skillbridge-orange hover:bg-skillbridge-lightOrange text-white py-2.5 px-6 rounded-lg font-medium transition-all duration-300 ease-in-out transform hover:scale-[1.02] hover:shadow-md active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply border border-skillbridge-blue text-skillbridge-blue bg-transparent hover:bg-skillbridge-blue/5 py-2.5 px-6 rounded-lg font-medium transition-all duration-300 ease-in-out hover:shadow-sm;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md rounded-xl shadow-sm border border-white/20;
+  }
+
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-24;
+  }
+
+  .nav-item {
+    @apply text-skillbridge-darkGray hover:text-skillbridge-blue transition-colors duration-200 font-medium;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4 text-skillbridge-blue;
+  }
+
+  .section-subtitle {
+    @apply text-skillbridge-darkGray text-lg md:text-xl mb-12 max-w-2xl mx-auto;
+  }
+
+  .tag {
+    @apply px-4 py-2 bg-skillbridge-gray rounded-full text-skillbridge-darkGray font-medium hover:bg-skillbridge-blue hover:text-white transition-all duration-300 cursor-pointer;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-md hover:-translate-y-1;
+  }
+  
+  .skill-tag {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-sm font-medium transition-all duration-200 bg-primary/10 text-primary hover:bg-primary/20;
+  }
+  
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 hover:bg-sidebar-accent text-sidebar-foreground hover:text-sidebar-accent-foreground;
+  }
+  
+  .sidebar-link.active {
+    @apply bg-sidebar-primary text-sidebar-primary-foreground;
+  }
+}
